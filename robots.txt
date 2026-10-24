@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# الصفحات التالية تحمل وسم noindex في ترويستها، فهي تُزحف ولا تُؤرشف:
+#   /thank-you.html              صفحة شكر بعد إرسال النموذج
+#   /projects/template.html      قالب داخلي
+#   /projects/alforsan-golden.html
+
+Sitemap: https://ammarhome.sa/sitemap.xml
