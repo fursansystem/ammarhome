@@ -1,14 +1,17 @@
 /**
- * يُشغّل من جذر المشروع عبر npm run css
- * إعداد Tailwind للصفحات الرئيسية (index / about / thank-you).
- * منقول حرفياً عن كتلة tailwind.config التي كانت مضمّنة في تلك الصفحات،
- * حتى يخرج ملف CSS مطابق تماماً لما كان الـ CDN يولّده في المتصفح.
+ * إعداد Tailwind الموحّد لكل صفحات الموقع الثابت.
+ * يُشغّل من جذر المشروع: npm run css
+ *
+ * لوحة brand هي لون هوية عمار هوم ‎#355C8A نفسه المعلن في
+ * <meta name="theme-color"> في كل صفحة. كانت صفحات المشاريع
+ * تستخدم لوحة زرقاء مختلفة (‎#0069e0) فوُحّدت هنا.
  */
 module.exports = {
   content: [
     './index.html',
     './about.html',
     './thank-you.html',
+    './projects/*.html',
     './assets/js/main.js',
   ],
   theme: {
@@ -25,6 +28,7 @@ module.exports = {
           700: '#2d4f78',
           800: '#27466A',
           900: '#1f3853',
+          950: '#16293d',
         },
       },
       fontFamily: {

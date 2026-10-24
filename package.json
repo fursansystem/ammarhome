@@ -8,9 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "css:main": "npx tailwindcss@3.4.17 -c tools/tailwind.main.cjs -i tools/tailwind-input.css -o assets/css/tailwind.css --minify",
-    "css:projects": "npx tailwindcss@3.4.17 -c tools/tailwind.projects.cjs -i tools/tailwind-input.css -o assets/css/tailwind-projects.css --minify",
-    "css": "npm run css:main && npm run css:projects"
+    "css": "npx tailwindcss@3.4.17 -c tools/tailwind.cjs -i tools/tailwind-input.css -o assets/css/tailwind.css --minify"
   },
   "keywords": [],
   "author": "",
