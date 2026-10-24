@@ -74,14 +74,19 @@
         opacity: 1;
       }
       
-      .thumbnail-slider .swiper-slide {
-        opacity: 0.6;
+      /* المصغّرة المطابقة للصورة المعروضة حالياً */
+      .thumbnail-slider .swiper-slide,
+      .additional-thumbnail-slider .swiper-slide {
+        opacity: 0.55;
         transition: opacity 0.3s;
       }
-      
-      .thumbnail-slider .swiper-slide-thumb-active {
+
+      .thumbnail-slider .swiper-slide-thumb-active,
+      .additional-thumbnail-slider .swiper-slide-thumb-active {
         opacity: 1;
-        border: 2px solid #3b82f6;
+        outline: 2px solid #355C8A;
+        outline-offset: 2px;
+        border-radius: 0.25rem;
       }
     </style>
   </head>
@@ -294,6 +299,14 @@
           <div class="swiper additional-thumbnail-slider mt-2 mb-8">
             <div class="swiper-wrapper">
               <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <div class="w-full h-20 rounded bg-gray-900 flex flex-col items-center justify-center gap-1 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <span class="text-[10px] leading-none">فيديو المشروع</span>
+                </div>
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
                 <img loading="lazy" src="../assets/img/1.jpg" alt="معاينة صورة 1" class="w-full h-20 object-cover rounded" />
               </div>
               <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
@@ -348,6 +361,14 @@
       
       // Initialize Swiper
       document.addEventListener('DOMContentLoaded', function() {
+        // سلايدر المصغّرات — يُنشأ قبل الرئيسي ليُمرّر إليه كـ thumbs
+        const thumbSwiper = new Swiper('.thumbnail-slider', {
+          spaceBetween: 8,
+          slidesPerView: 4,
+          freeMode: true,
+          watchSlidesProgress: true,
+        });
+
         // Main Slider
         const mainSwiper = new Swiper('.main-slider', {
           spaceBetween: 10,
@@ -372,13 +393,7 @@
             }
           },
           thumbs: {
-            swiper: {
-              el: '.thumbnail-slider',
-              slidesPerView: 4,
-              spaceBetween: 8,
-              freeMode: true,
-              watchSlidesProgress: true,
-            },
+            swiper: thumbSwiper,
           },
         });
         
@@ -426,35 +441,6 @@
         `;
         document.head.appendChild(style);
         
-        // Thumbnail Slider for Main Images
-        const thumbSwiper = new Swiper('.thumbnail-slider', {
-          spaceBetween: 8,
-          slidesPerView: 4,
-          freeMode: true,
-          watchSlidesProgress: true,
-        });
-        
-        // Make thumbnails clickable for main slider
-        document.querySelectorAll('.thumbnail-slider .swiper-slide').forEach((slide, index) => {
-          slide.addEventListener('click', () => {
-            mainSwiper.slideTo(index);
-          });
-        });
-        
-        // Additional Images Slider
-        const additionalSwiper = new Swiper('.additional-slider', {
-          spaceBetween: 10,
-          navigation: {
-            nextEl: '.additional-slider .swiper-button-next',
-            prevEl: '.additional-slider .swiper-button-prev',
-          },
-          pagination: {
-            el: '.additional-slider .swiper-pagination',
-            clickable: true,
-          },
-          loop: true,
-        });
-        
         // Thumbnail Slider for Additional Images
         const additionalThumbSwiper = new Swiper('.additional-thumbnail-slider', {
           spaceBetween: 10,
@@ -474,16 +460,22 @@
           },
         });
         
-        // Connect additional slider with thumbnail slider
-        additionalSwiper.controller.control = additionalThumbSwiper;
-        additionalThumbSwiper.controller.control = additionalSwiper;
-        
-        // Make thumbnails clickable for additional slider
-        document.querySelectorAll('.additional-thumbnail-slider .swiper-slide').forEach((slide, index) => {
-          slide.addEventListener('click', () => {
-            additionalSwiper.slideTo(index);
-          });
+
+        // Additional Images Slider
+        const additionalSwiper = new Swiper('.additional-slider', {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: '.additional-slider .swiper-button-next',
+            prevEl: '.additional-slider .swiper-button-prev',
+          },
+          pagination: {
+            el: '.additional-slider .swiper-pagination',
+            clickable: true,
+          },
+          loop: true,
+          thumbs: { swiper: additionalThumbSwiper },
         });
+        
       });
     </script>
   </body>

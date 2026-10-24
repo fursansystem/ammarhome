@@ -80,6 +80,21 @@
         border-radius: 0.5rem;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
+
+      /* المصغّرة المطابقة للصورة المعروضة حالياً */
+      .thumbnail-slider .swiper-slide,
+      .additional-thumbnail-slider .swiper-slide {
+        opacity: 0.55;
+        transition: opacity 0.3s;
+      }
+
+      .thumbnail-slider .swiper-slide-thumb-active,
+      .additional-thumbnail-slider .swiper-slide-thumb-active {
+        opacity: 1;
+        outline: 2px solid #355C8A;
+        outline-offset: 2px;
+        border-radius: 0.25rem;
+      }
     </style>
   </head>
   <body class="font-sans text-gray-800 bg-white">
@@ -338,24 +353,6 @@
       
       // Initialize Swiper
       document.addEventListener('DOMContentLoaded', function() {
-        // Main Slider
-        const mainSwiper = new Swiper('.main-slider', {
-          spaceBetween: 10,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          loop: true,
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-          },
-        });
-        
         // Thumbnail Slider
         const thumbnailSwiper = new Swiper('.thumbnail-slider', {
           spaceBetween: 10,
@@ -375,30 +372,26 @@
           },
         });
         
-        // Connect main slider with thumbnail slider
-        mainSwiper.controller.control = thumbnailSwiper;
-        thumbnailSwiper.controller.control = mainSwiper;
-        
-        // Handle thumbnail click
-        document.querySelectorAll('.thumbnail-slider .swiper-slide').forEach((slide, index) => {
-          slide.addEventListener('click', () => {
-            mainSwiper.slideTo(index);
-          });
+
+        // Main Slider
+        const mainSwiper = new Swiper('.main-slider', {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          thumbs: { swiper: thumbnailSwiper },
         });
-      });
-      
-      // Initialize additional slider
-      const additionalSwiper = new Swiper('.additional-slider', {
-        loop: true,
-        spaceBetween: 10,
-        navigation: {
-          nextEl: '.additional-slider .swiper-button-next',
-          prevEl: '.additional-slider .swiper-button-prev',
-        },
-        pagination: {
-          el: '.additional-slider .swiper-pagination',
-          clickable: true,
-        },
+        
       });
       
       // Initialize additional thumbnail slider
@@ -420,16 +413,22 @@
         },
       });
       
-      // Connect additional slider with its thumbnail slider
-      additionalSwiper.controller.control = additionalThumbnailSwiper;
-      additionalThumbnailSwiper.controller.control = additionalSwiper;
-      
-      // Handle thumbnail click for additional slider
-      document.querySelectorAll('.additional-thumbnail-slider .swiper-slide').forEach((slide, index) => {
-        slide.addEventListener('click', () => {
-          additionalSwiper.slideTo(index);
-        });
+
+      // Initialize additional slider
+      const additionalSwiper = new Swiper('.additional-slider', {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.additional-slider .swiper-button-next',
+          prevEl: '.additional-slider .swiper-button-prev',
+        },
+        pagination: {
+          el: '.additional-slider .swiper-pagination',
+          clickable: true,
+        },
+        thumbs: { swiper: additionalThumbnailSwiper },
       });
+      
       
       // Set current year in footer
       document.getElementById('y').textContent = new Date().getFullYear();
