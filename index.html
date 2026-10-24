@@ -325,7 +325,7 @@
             </a>
             <a href="projects/buraydah-view.html" class="block group scroll-animate zoom-in delay-300">
               <figure class="relative overflow-hidden rounded-xl border border-gray-200 bg-white h-full">
-                <img loading="lazy" class="aspect-[4/3] w-full object-cover transition group-hover:scale-105" src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop" alt="مشروع بريدة فيو" />
+                <img loading="lazy" class="aspect-[4/3] w-full object-cover transition group-hover:scale-105" src="assets/img/buraydah-view-1.jpg" alt="مشروع بريدة فيو" />
                 <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
                   <div class="font-semibold">مشروع بريدة فيو</div>
                   <div class="text-sm text-white/80">بريدة — تطوير عقاري سكني، 126 وحدة سكنية</div>
@@ -374,7 +374,7 @@
             </div>
             <form action="https://formsubmit.co/info@ammarhome.sa" method="POST" class="rounded-xl border border-gray-200 p-6 bg-white scroll-animate fade-left delay-200">
               <input type="hidden" name="_subject" value="طلب جديد من الموقع">
-              <input type="hidden" name="_next" value="https://ammarhome.sa/thank-you.html">
+              <input type="hidden" name="_next" id="form-next" value="https://ammarhome.sa/thank-you.html">
               <input type="hidden" name="_captcha" value="false">
               <div class="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -396,6 +396,13 @@
               </div>
               <button type="submit" class="mt-6 inline-flex items-center justify-center rounded-md bg-brand-600 px-5 py-3 text-white hover:bg-brand-700 transition w-full sm:w-auto">إرسال</button>
             </form>
+            <script>
+              // استخدم صفحة الشكر على النطاق الحالي بدل النطاق المثبت، لتعمل محلياً وعلى أي استضافة
+              (function () {
+                if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+                document.getElementById('form-next').value = new URL('thank-you.html', location.href).href;
+              })();
+            </script>
           </div>
         </div>
       </section>
