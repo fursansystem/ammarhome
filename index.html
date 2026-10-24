@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>عمار هوم للمقاولات | Ammar Home</title>
+    <meta name="description" content="شركة عمار هوم للمقاولات: حلول هندسية، تشطيبات داخلية، تصميم وبناء وتشغيل ذكي للمنازل والمشاريع." />
+    <meta name="theme-color" content="#355C8A" />
+
+    <meta property="og:title" content="عمار هوم للمقاولات | Ammar Home" />
+    <meta property="og:description" content="حلول هندسية وتشطيبات راقية وخدمات بناء للمنازل والمشاريع." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1502005229762-cf1b2da7c3f5?q=80&w=1600&auto=format&fit=crop" />
+    <link rel="icon" href="assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" type="image/png" />
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      @keyframes float {
+        0%, 100% { 
+          transform: translateY(0) rotate(0.5deg); 
+        }
+        25% { 
+          transform: translateY(-6px) rotate(-0.5deg); 
+        }
+        50% { 
+          transform: translateY(-10px) rotate(0.5deg); 
+        }
+        75% { 
+          transform: translateY(-4px) rotate(-0.5deg); 
+        }
+      }
+      .floating {
+        animation: float 8s ease-in-out infinite;
+        transform-origin: center center;
+        transition: all 0.3s ease;
+      }
+      .floating:hover {
+        animation-play-state: paused;
+        transform: scale(1.02);
+      }
+
+      /* Scroll Animation Styles */
+      .scroll-animate {
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .scroll-animate.visible {
+        opacity: 1;
+      }
+      .fade-up {
+        transform: translateY(40px);
+      }
+      .fade-up.visible {
+        transform: translateY(0);
+      }
+      .fade-down {
+        transform: translateY(-40px);
+      }
+      .fade-down.visible {
+        transform: translateY(0);
+      }
+      .fade-left {
+        transform: translateX(60px);
+      }
+      .fade-left.visible {
+        transform: translateX(0);
+      }
+      .fade-right {
+        transform: translateX(-60px);
+      }
+      .fade-right.visible {
+        transform: translateX(0);
+      }
+      .zoom-in {
+        transform: scale(0.8);
+      }
+      .zoom-in.visible {
+        transform: scale(1);
+      }
+      .rotate-in {
+        transform: rotate(-10deg) scale(0.9);
+      }
+      .rotate-in.visible {
+        transform: rotate(0) scale(1);
+      }
+      .delay-100 { transition-delay: 0.1s; }
+      .delay-200 { transition-delay: 0.2s; }
+      .delay-300 { transition-delay: 0.3s; }
+      .delay-400 { transition-delay: 0.4s; }
+      .delay-500 { transition-delay: 0.5s; }
+      .delay-600 { transition-delay: 0.6s; }
+
+      /* Hero Animation - slides in on page load */
+      .hero-animate {
+        opacity: 0;
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        animation-fill-mode: forwards;
+      }
+      .slide-from-left {
+        transform: translateX(-100px);
+        animation-name: slideFromLeft;
+        animation-delay: 0.3s;
+      }
+      .slide-from-right {
+        transform: translateX(100px);
+        animation-name: slideFromRight;
+        animation-delay: 0.1s;
+      }
+      @keyframes slideFromLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideFromRight {
+        from {
+          opacity: 0;
+          transform: translateX(100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+    <script>
+      window.tailwind = { config: { darkMode: 'class' } };
+      window.tailwind = undefined;
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#eef2f8',
+                100: '#d9e1ee',
+                200: '#b7c6dc',
+                300: '#8aa4c4',
+                400: '#5f83ac',
+                500: '#3d6a99',
+                600: '#355C8A',
+                700: '#2d4f78',
+                800: '#27466A',
+                900: '#1f3853'
+              }
+            },
+            fontFamily: {
+              sans: ['Cairo', 'ui-sans-serif', 'system-ui']
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="font-sans text-gray-800 bg-white selection:bg-brand-100 selection:text-brand-900">
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/70 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" class="flex items-center gap-3">
+            <img loading="lazy" src="assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" alt="شعار عمار هوم" class="h-12 w-12 object-contain" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='assets/img/logo.svg';}else{this.replaceWith(Object.assign(document.createElement('span'),{className:'inline-flex h-12 w-12 items-center justify-center rounded-md bg-brand-600 text-white text-xl',textContent:'ع'}))}"/>
+            <span class="text-lg sm:text-xl font-extrabold tracking-tight">عمار هوم</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#about" class="hover:text-brand-700">من نحن</a>
+            <a href="#services" class="hover:text-brand-700">خدماتنا</a>
+            <a href="#projects" class="hover:text-brand-700">أعمالنا</a>
+            <a href="#testimonials" class="hover:text-brand-700">شركاء الاعمار</a>
+            <a href="#contact" class="hover:text-brand-700">تواصل معنا</a>
+            <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-white hover:bg-brand-700 transition">اطلب عرض سعر</a>
+          </nav>
+          <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-gray-200 text-gray-700">
+            <span class="sr-only">قائمة</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100 bg-white">
+        <div class="px-4 py-3 space-y-2 text-sm">
+          <a href="#about" class="block py-2">من نحن</a>
+          <a href="#services" class="block py-2">خدماتنا</a>
+          <a href="#projects" class="block py-2">أعمالنا</a>
+          <a href="#testimonials" class="block py-2">شركاء الاعمار</a>
+          <a href="#contact" class="block py-2">تواصل معنا</a>
+          <a href="#contact" class="block py-2 text-center rounded-md bg-brand-600 text-white">اطلب عرض سعر</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative pt-28 sm:pt-32 pb-16 sm:pb-24 bg-gradient-to-b from-brand-50 to-white overflow-hidden">
+        <div class="absolute inset-0 bg-white/50 z-0"></div>
+        <div class="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-brand-100 blur-3xl"></div>
+        <div class="absolute -right-24 top-10 h-64 w-64 rounded-full bg-brand-50 blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="relative z-10 hero-animate slide-from-right">
+              
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-none">
+                <div class="mb-3 font-cairo text-3xl sm:text-4xl lg:text-5xl">عمار هوم للمقاولات</div>
+                <div class="space-y-2">
+                  <div class="text-brand-700 text-3xl sm:text-4xl lg:text-5xl font-bold">معمار يُجسد الرؤية،</div>
+                  <div class="text-brand-700 text-3xl sm:text-4xl lg:text-5xl font-bold">وجودة تُلهم الثقة</div>
+                </div>
+              </h1>
+              <p class="mt-5 text-gray-600 leading-8">
+                حلول هندسية متكاملة، تشطيبات، وإدارة مشاريع بجودة عالية وتسليم في الوقت.
+              </p>
+              <div class="mt-8 flex items-center gap-3">
+                <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-brand-600 px-5 py-3 text-white hover:bg-brand-700 transition">ابدأ مشروعك الآن</a>
+                <a href="#projects" class="inline-flex items-center justify-center rounded-md px-5 py-3 border border-gray-200 text-gray-800 hover:bg-gray-50">تصفح أعمالنا</a>
+              </div>
+              <div class="mt-8 flex items-center gap-6 text-sm text-gray-600">
+                <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-brand-600"></span> التزام بالمواعيد</div>
+                <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-brand-600"></span> ضمان جودة</div>
+                <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-brand-600"></span> دقة في التنفيذ</div>
+              </div>
+            </div>
+            <div class="relative flex items-center justify-center z-10 hero-animate slide-from-left">
+              <div class="w-5/6 aspect-[4/3] flex items-center justify-center overflow-hidden">
+                <img loading="lazy" class="w-full h-full object-contain rounded-xl shadow-2xl" src="assets/img/12.jpg" alt="تصميم داخلي حديث" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="order-2 lg:order-1 scroll-animate fade-right">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">من نحن</h2>
+              <p class="mt-4 text-gray-600 leading-8">
+                شركة مقاولات متخصصة في مجموعة واسعة من الخدمات الإنشائية وخدمات التجديد وإعادة البناء والتصميمات الداخلية والخارجية، يتكون فريقنا من مهندسين وعاملين محترفين ذوي مهارات عالية وذوي خبرة كبيرة يعملون بجد لتقديم عمل عالٍ الجودة وخدمة عملاء استثنائية، سواء كنت تبحث عن بناء منزل جديد أو إعادة تصميم أو تنفيذ مشروع بناء تجاري كبير لدينا الخبرة والموارد لإنجاز المهمة بشكل صحيح، حيث نعتمد على أفضل المواد والخامات والمعدات ذات الجودة العالية التي تساعدنا على تقديم خدمة مميزة في أسرع وقت
+              </p>
+              <a href="about.html" class="mt-4 inline-flex items-center justify-center rounded-md bg-brand-600 px-5 py-3 text-white hover:bg-brand-700 transition">معرفة المزيد</a>
+              <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                <div class="rounded-lg border border-gray-200 p-5">
+                  <div class="text-brand-700 font-semibold">الجودة والامان</div>
+                  <div class="mt-1 text-gray-600 text-sm">نلتزم بأعلى معايير الجودة والسلامة في جميع مشاريعنا، مع مراقبة دورية وقياس رضا العملاء لضمان التميز المستمر.</div>
+                </div>
+                <div class="rounded-lg border border-gray-200 p-5">
+                  <div class="text-brand-700 font-semibold">خبرة عملية</div>
+                  <div class="mt-1 text-gray-600 text-sm">إدارة مشاريع من التخطيط حتى التسليم.</div>
+                </div>
+              </div>
+            </div>
+            <div class="order-1 lg:order-2 scroll-animate fade-left">
+              <img loading="lazy" class="rounded-xl shadow-xl w-full object-cover aspect-[4/3]" src="assets/img/20.jpg" alt="فريق عمل عمار هوم للمقاولات" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-16 sm:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-end justify-between gap-6 scroll-animate fade-up">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">خدماتنا</h2>
+            <a href="#contact" class="text-brand-700 hover:text-brand-800 text-sm">هل لديك متطلبات خاصة؟ تواصل معنا</a>
+          </div>
+          <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="rounded-xl border border-gray-200 p-6 bg-white scroll-animate fade-up delay-100">
+              <div class="text-lg font-bold">إدارة المشاريع</div>
+              <p class="mt-2 text-gray-600 text-sm">حلول إدارية متكاملة لضمان نجاح مشروعك من البداية حتى النهاية.</p>
+              <ul class="mt-3 space-y-1 text-sm text-gray-600 list-disc pr-5">
+                <li>تخطيط وجدولة المشاريع</li>
+                <li>إدارة الموارد والميزانية</li>
+                <li>متابعة التنفيذ والتسليم</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-6 bg-white scroll-animate fade-up delay-200">
+              <div class="text-lg font-bold">تشطيبات وبناء</div>
+              <p class="mt-2 text-gray-600 text-sm">تنفيذ متكامل وفق المواصفات والميزانية.</p>
+              <ul class="mt-3 space-y-1 text-sm text-gray-600 list-disc pr-5">
+                <li>أعمال مدنية وكهربائية</li>
+                <li>أرضيات وجدران وأسقف</li>
+                <li>دقة في التنفيذ</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-gray-200 p-6 bg-white scroll-animate fade-up delay-300">
+              <div class="text-lg font-bold">بيوت ذكية</div>
+              <p class="mt-2 text-gray-600 text-sm">تحكم ذكي بالإضاءة والأمن والراحة.</p>
+              <ul class="mt-3 space-y-1 text-sm text-gray-600 list-disc pr-5">
+                <li>أنظمة تحكم مركزي</li>
+                <li>شبكات وكاميرات</li>
+                <li>تكامل مع المساعدات الصوتية</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 scroll-animate fade-up">أعمال مختارة</h2>
+          <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="projects/alforsan-diamond.html" class="block group scroll-animate zoom-in delay-100">
+              <figure class="relative overflow-hidden rounded-xl border border-gray-200 bg-white h-full">
+                <img loading="lazy" class="aspect-[4/3] w-full object-cover transition group-hover:scale-105" src="assets/img/9.jpg" alt="مشروع الفرسان دايموند" loading="lazy" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+                  <div class="font-semibold">مشروع الفرسان دايموند</div>
+                  <div class="text-sm text-white/80">الرياض — تنفيذ، تشطيبات، وإدارة مشروع</div>
+                </figcaption>
+              </figure>
+            </a>
+            <a href="projects/alforsan-gold.html" class="block group scroll-animate zoom-in delay-200">
+              <figure class="relative overflow-hidden rounded-xl border border-gray-200 bg-white h-full">
+                <img loading="lazy" class="aspect-[4/3] w-full object-cover transition group-hover:scale-105" src="assets/img/24.jpg" alt="مشروع الفرسان جولد" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+                  <div class="font-semibold">مشروع الفرسان جولد</div>
+                  <div class="text-sm text-white/80">الرياض — تنفيذ، تشطيبات، وإدارة مشروع</div>
+                </figcaption>
+              </figure>
+            </a>
+            <a href="projects/buraydah-view.html" class="block group scroll-animate zoom-in delay-300">
+              <figure class="relative overflow-hidden rounded-xl border border-gray-200 bg-white h-full">
+                <img loading="lazy" class="aspect-[4/3] w-full object-cover transition group-hover:scale-105" src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop" alt="مشروع بريدة فيو" />
+                <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+                  <div class="font-semibold">مشروع بريدة فيو</div>
+                  <div class="text-sm text-white/80">بريدة — تطوير عقاري سكني، 126 وحدة سكنية</div>
+                </figcaption>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="py-12 sm:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8 scroll-animate fade-down">شركاء الإعمار</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-48 scroll-animate fade-up delay-100">
+              <img loading="lazy" src="assets/img/14.jpg" alt="شريك 1" class="max-h-32 w-auto object-contain p-2">
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-48 scroll-animate fade-up delay-200">
+              <img loading="lazy" src="assets/img/15.jpg" alt="شريك 2" class="max-h-32 w-auto object-contain p-2">
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center h-48 scroll-animate fade-up delay-300">
+              <img loading="lazy" src="assets/img/16.jpg" alt="شريك 3" class="max-h-32 w-auto object-contain p-2">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-10">
+            <div class="scroll-animate fade-right">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">تواصل معنا</h2>
+              <p class="mt-4 text-gray-600">أخبرنا عن مشروعك وسنعود إليك في أسرع وقت.</p>
+              <div class="mt-6 text-sm text-gray-700 space-y-2">
+                <div>البريد: <a class="text-brand-700 hover:text-brand-800" href="mailto:info@ammarhome.sa">info@ammarhome.sa</a></div>
+                <div class="flex items-center gap-1">
+                  <span>العوان: شارع أم كلثوم بنت علي رضي الله عنها، حي الهجرة، مكة المكرمة</span>
+                  <a class="text-blue-500 hover:text-blue-600 flex items-center gap-1" target="_blank" rel="noopener" href="https://www.google.com/maps/place/8484+Jabal+Thawr+Branch+Rd,+Batha+Quraish,+Makkah+24241/@21.3856962,39.9416669,17z/data=!3m1!4b1!4m6!3m5!1s0x15c1c2c3f8e3d1a1:0x1c3b3d4e5f6a7b8c!8m2!3d21.3856913!4d39.9442418!16s%2Fg%2F11bw4q4q9q?entry=ttu" title="عرض على الخريطة">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <form action="https://formsubmit.co/info@ammarhome.sa" method="POST" class="rounded-xl border border-gray-200 p-6 bg-white scroll-animate fade-left delay-200">
+              <input type="hidden" name="_subject" value="طلب جديد من الموقع">
+              <input type="hidden" name="_next" value="https://ammarhome.sa/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">الاسم</label>
+                  <input type="text" name="name" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" required>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">الهاتف</label>
+                  <input type="tel" name="phone" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" required>
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-medium text-gray-700">البريد الإلكتروني</label>
+                  <input type="email" name="email" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" required>
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-medium text-gray-700">وصف المشروع</label>
+                  <textarea name="message" rows="4" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="المساحة، الميزانية، النمط المفضل..." required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="mt-6 inline-flex items-center justify-center rounded-md bg-brand-600 px-5 py-3 text-white hover:bg-brand-700 transition w-full sm:w-auto">إرسال</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-gray-100 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+        <div>© <span id="y"></span> عمار هوم للمقاولات. جميع الحقوق محفوظة.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-brand-700">سياسة الخصوصية</a>
+          <a href="#" class="hover:text-brand-700">الشروط والأحكام</a>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/966500618877?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%B9%D9%85%D8%A7%D8%B1%20%D9%87%D9%88%D9%85%2C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86" target="_blank" rel="noopener" aria-label="تواصل واتساب" class="fixed left-6 bottom-6 z-50 inline-block h-12 w-12 rounded-full shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-white">
+      <img src="assets/img/26.jpg" alt="واتساب" class="h-full w-full object-cover">
+      <span class="sr-only">واتساب</span>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مشروع الفرسان دايموند | عمار هوم</title>
+    <meta name="description" content="مشروع الفرسان دايموند - مجمع سكني متكامل في حي بدر بالرياض - 618 وحدة سكنية على مساحة 53,792 متر مربع" />
+    <meta name="theme-color" content="#355C8A" />
+
+    <meta property="og:title" content="مشروع الفرسان دايموند | عمار هوم" />
+    <meta property="og:description" content="مشروع الفرسان دايموند - مجمع سكني متكامل في حي بدر بالرياض - 618 وحدة سكنية على مساحة 53,792 متر مربع" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1600&auto=format&fit=crop" />
+    <link rel="icon" href="../assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" type="image/png" />
+    <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f0f7ff',
+                100: '#e0f0ff',
+                200: '#b9dfff',
+                300: '#7cc4ff',
+                400: '#36a5ff',
+                500: '#0d8aff',
+                600: '#0069e0',
+                700: '#0152b5',
+                800: '#064686',
+                900: '#0b3b6f',
+                950: '#07264a',
+              },
+            },
+            fontFamily: {
+              sans: ['Cairo', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .prose {
+        max-width: 100%;
+      }
+      .prose :where(p):not(:where([class~="not-prose"] *)) {
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+      }
+      .prose :where(img):not(:where([class~="not-prose"] *)) {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-radius: 0.5rem;
+        width: 100%;
+        height: auto;
+      }
+      
+      /* Swiper Custom Styles */
+      .swiper {
+        width: 100%;
+      }
+      
+      .swiper-slide {
+        text-align: center;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        font-size: 1.5rem;
+      }
+      
+      .swiper-pagination-bullet {
+        background: #fff;
+        opacity: 0.5;
+      }
+      
+      .swiper-pagination-bullet-active {
+        background: #3b82f6;
+        opacity: 1;
+      }
+      
+      .thumbnail-slider .swiper-slide {
+        opacity: 0.6;
+        transition: opacity 0.3s;
+      }
+      
+      .thumbnail-slider .swiper-slide-thumb-active {
+        opacity: 1;
+        border: 2px solid #3b82f6;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 bg-white">
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/70 border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="../index.html" class="flex items-center gap-3">
+            <img src="../assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" 
+                 alt="شعار عمار هوم" 
+                 class="h-12 w-12 object-contain"
+                 onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='../assets/img/logo.svg';}else{this.replaceWith(Object.assign(document.createElement('span'),{className:'inline-flex h-12 w-12 items-center justify-center rounded-md bg-brand-600 text-white text-xl',textContent:'ع'}))}" />
+            <span class="text-xl font-bold text-gray-900">عمار هوم</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="../index.html#about" class="hover:text-brand-700">من نحن</a>
+            <a href="../index.html#services" class="hover:text-brand-700">خدماتنا</a>
+            <a href="../index.html#projects" class="hover:text-brand-700">أعمالنا</a>
+            <a href="../index.html#testimonials" class="hover:text-brand-700">آراء العملاء</a>
+            <a href="../index.html#contact" class="hover:text-brand-700">تواصل معنا</a>
+            <a href="../index.html#contact" class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-white hover:bg-brand-700 transition">اطلب عرض سعر</a>
+          </nav>
+          <button class="md:hidden p-2" id="mobile-menu-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-4 py-3 space-y-2 text-sm">
+          <a href="../index.html#about" class="block py-2">من نحن</a>
+          <a href="../index.html#services" class="block py-2">خدماتنا</a>
+          <a href="../index.html#projects" class="block py-2">أعمالنا</a>
+          <a href="../index.html#testimonials" class="block py-2">آراء العملاء</a>
+          <a href="../index.html#contact" class="block py-2">تواصل معنا</a>
+          <a href="../index.html#contact" class="block py-2 text-center rounded-md bg-brand-600 text-white">اطلب عرض سعر</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24 pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose max-w-4xl mx-auto">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 text-center">مشروع الفرسان دايموند</h1>
+          
+          <!-- Main Slider -->
+          <div class="swiper main-slider rounded-xl overflow-hidden mb-4">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/7.jpg" alt="صورة 7 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/8.jpg" alt="صورة 8 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/9.jpg" alt="صورة 9 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/10.jpg" alt="صورة 10 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          
+          <!-- Thumbnail Slider -->
+          <div class="swiper thumbnail-slider mt-2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/7.jpg" alt="معاينة صورة 7" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/8.jpg" alt="معاينة صورة 8" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/9.jpg" alt="معاينة صورة 9" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/10.jpg" alt="معاينة صورة 10" class="w-full h-20 object-cover rounded" />
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-xl mb-8">
+            <h3 class="mt-0">تفاصيل المشروع</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">العميل</h4>
+                <p>شركة فرسان النماء</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">الموقع</h4>
+                <p class="flex items-center gap-1">
+                  <span>الرياض، حي بدر</span>
+                  <a href="https://www.google.com/maps/place/24%C2%B031'16.0%22N+46%C2%B043'55.7%22E/@24.5211111,46.7321389,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.5211111!4d46.7321389?entry=ttu" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:text-brand-700" title="عرض على الخريطة">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </a>
+                </p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">عدد الوحدات السكنية</h4>
+                <p>618 وحدة سكنية</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">المساحة الإجمالية</h4>
+                <p>53,792 متر مربع</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">حالة المشروع</h4>
+                <div class="space-y-2">
+                  <div class="flex justify-between text-sm">
+                    <span>نسبة الإنجاز</span>
+                    <span class="font-medium">95.95%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-brand-600 h-2 rounded-full" style="width: 95.95%"></div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-gray-500 mb-2">موعد التسليم</h4>
+                <p>ديسمبر 2025</p>
+              </div>
+            </div>
+          </div>
+          
+          <h2>نظرة عامة</h2>
+          <p>يعد مشروع الفرسان دايموند مشروعاً سكنياً متكاملاً يقع في حي بدر بمدينة الرياض، حيث تم تصميمه ليكون تحفة معمارية تجمع بين الفخامة والراحة. يتكون المشروع من 618 وحدة سكنية متنوعة المساحات والتصاميم، موزعة على مساحة إجمالية تبلغ 53,792 متر مربع.</p>
+          
+          <h2>مميزات المشروع</h2>
+          <ul>
+            <li>موقع متميز في حي بدر بالرياض</li>
+            <li>قرب المشروع من كافة الخدمات والمرافق</li>
+            <li>تصاميم معمارية مميزة وعصرية</li>
+            <li>مساحات متنوعة تناسب كافة الاحتياجات</li>
+            <li>أسعار تنافسية تتناسب مع جودة المشروع</li>
+            <li>مرافق وخدمات متكاملة</li>
+          </ul>
+          
+          <h2>تفاصيل إضافية</h2>
+          <p>تم بيع المشروع بالكامل على الخارطة، حيث تم تقديم وحدات سكنية بمساحات ونماذج متعددة تلبي احتياجات مختلف العملاء. يتميز المشروع بموقعه الاستراتيجي في حي بدر الذي يتميز بكونه من الأحياء المأهولة بالسكان والقريبة من كافة الخدمات الأساسية والترفيهية.</p>
+          <p>من المقرر أن يتم تسليم المشروع في ديسمبر 2025، حيث سيتمكن العملاء من الاستمتاع بوحداتهم السكنية التي تجمع بين التصميم العصير والجودة العالية في البناء والتشطيب.</p>
+          
+          <!-- Latest Images Section -->
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">أحدث الصور والفيديوهات</h2>
+          <div class="swiper additional-slider rounded-xl overflow-hidden my-4">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="w-full aspect-video bg-black">
+                  <iframe 
+                    class="w-full h-full" 
+                    src="https://www.youtube.com/embed/omUghZG6Pas" 
+                    title="فيديو مشروع الفرسان دايموند" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-auto aspect-video flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/1.jpg" alt="صورة 1 إضافية لمشروع الفرسان دايموند" class="w-full h-auto max-h-[70vh] object-contain" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-auto aspect-video flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/2.jpg" alt="صورة 2 إضافية لمشروع الفرسان دايموند" class="w-full h-auto max-h-[70vh] object-contain" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-auto aspect-video flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/3.jpg" alt="صورة 3 إضافية لمشروع الفرسان دايموند" class="w-full h-auto max-h-[70vh] object-contain" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-auto aspect-video flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/4.jpg" alt="صورة 4 إضافية لمشروع الفرسان دايموند" class="w-full h-auto max-h-[70vh] object-contain" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-auto aspect-video flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/5.jpg" alt="صورة 5 إضافية لمشروع الفرسان دايموند" class="w-full h-auto max-h-[70vh] object-contain" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full h-auto aspect-video flex items-center justify-center bg-gray-100 overflow-hidden">
+                  <img src="../assets/img/6.jpg" alt="صورة 6 إضافية لمشروع الفرسان دايموند" class="w-full h-auto max-h-[70vh] object-contain" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          
+          <!-- Thumbnail Slider for Additional Images -->
+          <div class="swiper additional-thumbnail-slider mt-2 mb-8">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/1.jpg" alt="معاينة صورة 1" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/2.jpg" alt="معاينة صورة 2" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/3.jpg" alt="معاينة صورة 3" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/4.jpg" alt="معاينة صورة 4" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/5.jpg" alt="معاينة صورة 5" class="w-full h-20 object-cover rounded" />
+              </div>
+              <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+                <img src="../assets/img/6.jpg" alt="معاينة صورة 6" class="w-full h-20 object-cover rounded" />
+              </div>
+            </div>
+          </div>
+          
+          <h2>النتائج</h2>
+          <p>سيتم تسليم المشروع في الوقت المحدد وبأعلى معايير الجودة، مما أسعد العميل وحقق توقعاته. تميز المشروع بالدقة في التنفيذ والجودة العالية في التشطيبات.</p>
+          
+          <div class="mt-12 text-center">
+            <a href="../index.html#contact" class="inline-flex items-center justify-center rounded-md bg-brand-600 px-6 py-3 text-white hover:bg-brand-700 transition">اطلب مشروعاً مماثلاً</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="border-t border-gray-100 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+        <div>© <span id="y"></span> عمار هوم. جميع الحقوق محفوظة.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-gray-900">الشروط والأحكام</a>
+          <a href="#" class="hover:text-gray-900">سياسة الخصوصية</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Current year for footer
+      document.getElementById('y').textContent = new Date().getFullYear();
+      
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Initialize Swiper
+      document.addEventListener('DOMContentLoaded', function() {
+        // Main Slider
+        const mainSwiper = new Swiper('.main-slider', {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: '.main-slider .swiper-button-next',
+            prevEl: '.main-slider .swiper-button-prev',
+          },
+          pagination: {
+            el: '.main-slider .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 0
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            }
+          },
+          thumbs: {
+            swiper: {
+              el: '.thumbnail-slider',
+              slidesPerView: 4,
+              spaceBetween: 8,
+              freeMode: true,
+              watchSlidesProgress: true,
+            },
+          },
+        });
+        
+        // Adjust slider container height on mobile
+        function adjustSliderHeight() {
+          if (window.innerWidth < 768) { // Mobile view
+            const slides = document.querySelectorAll('.main-slider .swiper-slide');
+            slides.forEach(slide => {
+              const img = slide.querySelector('img');
+              if (img) {
+                const aspectRatio = img.naturalHeight / img.naturalWidth;
+                const newHeight = window.innerWidth * aspectRatio;
+                slide.style.height = `${newHeight}px`;
+              }
+            });
+          } else {
+            // Reset height for desktop
+            const slides = document.querySelectorAll('.main-slider .swiper-slide');
+            slides.forEach(slide => {
+              slide.style.height = '';
+            });
+          }
+        }
+        
+        // Run on load and resize
+        window.addEventListener('load', adjustSliderHeight);
+        window.addEventListener('resize', adjustSliderHeight);
+        
+        // Add CSS for full-width images on mobile
+        const style = document.createElement('style');
+        style.textContent = `
+          @media (max-width: 767px) {
+            .main-slider .swiper-slide {
+              width: 100% !important;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .main-slider .swiper-slide img {
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+            }
+          }
+        `;
+        document.head.appendChild(style);
+        
+        // Thumbnail Slider for Main Images
+        const thumbSwiper = new Swiper('.thumbnail-slider', {
+          spaceBetween: 8,
+          slidesPerView: 4,
+          freeMode: true,
+          watchSlidesProgress: true,
+        });
+        
+        // Make thumbnails clickable for main slider
+        document.querySelectorAll('.thumbnail-slider .swiper-slide').forEach((slide, index) => {
+          slide.addEventListener('click', () => {
+            mainSwiper.slideTo(index);
+          });
+        });
+        
+        // Additional Images Slider
+        const additionalSwiper = new Swiper('.additional-slider', {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: '.additional-slider .swiper-button-next',
+            prevEl: '.additional-slider .swiper-button-prev',
+          },
+          pagination: {
+            el: '.additional-slider .swiper-pagination',
+            clickable: true,
+          },
+          loop: true,
+        });
+        
+        // Thumbnail Slider for Additional Images
+        const additionalThumbSwiper = new Swiper('.additional-thumbnail-slider', {
+          spaceBetween: 10,
+          slidesPerView: 4,
+          freeMode: true,
+          watchSlidesProgress: true,
+          breakpoints: {
+            320: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          },
+        });
+        
+        // Connect additional slider with thumbnail slider
+        additionalSwiper.controller.control = additionalThumbSwiper;
+        additionalThumbSwiper.controller.control = additionalSwiper;
+        
+        // Make thumbnails clickable for additional slider
+        document.querySelectorAll('.additional-thumbnail-slider .swiper-slide').forEach((slide, index) => {
+          slide.addEventListener('click', () => {
+            additionalSwiper.slideTo(index);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
