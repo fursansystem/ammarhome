@@ -35,6 +35,9 @@
 # Disable directory browsing
 Options -Indexes
 
+# Block the archived source images folder (originals kept for reference only)
+RedirectMatch 404 ^/_originals(/.*)?$
+
 # Redirect HTTP to HTTPS
 <IfModule mod_rewrite.c>
     RewriteEngine On
