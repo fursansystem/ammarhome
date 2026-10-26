@@ -17,7 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 
     <style>
       @keyframes float {
@@ -96,10 +96,8 @@
       .delay-600 { transition-delay: 0.6s; }
 
       /* Hero Animation - slides in on page load */
-      /* الهيرو يُرسم فوراً بوضوح كامل وينزلق إلى مكانه. أي تلاشٍ من
-         شفافية صفر، أو تأخير قبل البدء، يؤجّل احتساب LCP إلى ما بعد
-         انتهاء الحركة. الانزلاق وحده لا يؤجّله. */
       .hero-animate {
+        opacity: 0;
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         animation-fill-mode: forwards;
@@ -107,24 +105,30 @@
       .slide-from-left {
         transform: translateX(-100px);
         animation-name: slideFromLeft;
+        animation-delay: 0.3s;
       }
       .slide-from-right {
         transform: translateX(100px);
         animation-name: slideFromRight;
+        animation-delay: 0.1s;
       }
       @keyframes slideFromLeft {
         from {
+          opacity: 0;
           transform: translateX(-100px);
         }
         to {
+          opacity: 1;
           transform: translateX(0);
         }
       }
       @keyframes slideFromRight {
         from {
+          opacity: 0;
           transform: translateX(100px);
         }
         to {
+          opacity: 1;
           transform: translateX(0);
         }
       }
@@ -140,7 +144,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <a href="#" class="flex items-center gap-3">
-            <img width="273" height="338" src="assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" alt="شعار عمار هوم" class="h-12 w-12 object-contain" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'inline-flex h-12 w-12 items-center justify-center rounded-md bg-brand-600 text-white text-xl',textContent:'ع'}))"/>
+            <img loading="lazy" src="assets/img/WhatsApp_Image_2025-10-16_at_13.25.13_e6ff0258-removebg-preview.png" alt="شعار عمار هوم" class="h-12 w-12 object-contain" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'inline-flex h-12 w-12 items-center justify-center rounded-md bg-brand-600 text-white text-xl',textContent:'ع'}))"/>
             <span class="text-lg sm:text-xl font-extrabold tracking-tight">عمار هوم</span>
           </a>
           <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -200,7 +204,7 @@
             </div>
             <div class="relative flex items-center justify-center z-10 hero-animate slide-from-left">
               <div class="w-5/6 aspect-[4/3] flex items-center justify-center overflow-hidden">
-                <img fetchpriority="high" class="w-full h-full object-cover rounded-xl shadow-2xl" src="assets/img/21.jpg" alt="واجهات سكنية ليلاً من مشروع الفرسان جولد بالرياض" />
+                <img loading="lazy" class="w-full h-full object-contain rounded-xl shadow-2xl" src="assets/img/12.jpg" alt="تصميم داخلي حديث" loading="lazy" />
               </div>
             </div>
           </div>
@@ -228,7 +232,7 @@
               </div>
             </div>
             <div class="order-1 lg:order-2 scroll-animate fade-left">
-              <img loading="lazy" class="rounded-xl shadow-xl w-full object-cover aspect-[4/3]" src="assets/img/20.jpg" alt="فريق عمل عمار هوم للمقاولات" />
+              <img loading="lazy" class="rounded-xl shadow-xl w-full object-cover aspect-[4/3]" src="assets/img/20.jpg" alt="فريق عمل عمار هوم للمقاولات" loading="lazy" />
             </div>
           </div>
         </div>
@@ -278,7 +282,7 @@
           <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <a href="projects/alforsan-diamond.html" class="block group scroll-animate zoom-in delay-100">
               <figure class="relative overflow-hidden rounded-xl border border-gray-200 bg-white h-full">
-                <img loading="lazy" class="aspect-[4/3] w-full object-cover transition group-hover:scale-105" src="assets/img/9.jpg" alt="مشروع الفرسان دايموند" />
+                <img loading="lazy" class="aspect-[4/3] w-full object-cover transition group-hover:scale-105" src="assets/img/9.jpg" alt="مشروع الفرسان دايموند" loading="lazy" />
                 <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
                   <div class="font-semibold">مشروع الفرسان دايموند</div>
                   <div class="text-sm text-white/80">الرياض — تنفيذ، تشطيبات، وإدارة مشروع</div>
