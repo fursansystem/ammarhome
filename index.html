@@ -64,6 +64,11 @@
       .fade-down.visible {
         transform: translateY(0);
       }
+      /* الانزلاق الأفقي يبدأ خارج حدود العنصر بـ 60px. العنصر الذي
+         يملأ عرض الشاشة (عمود واحد تحت lg) يخرج بذلك خارج إطار العرض،
+         فيولّد تمدداً أفقياً قابلاً للتمرير بمقدار 60px ناقص حشوة
+         الحاوية. لذلك كل <section> يحتوي fade-left/fade-right يحمل
+         overflow-x-clip، تماماً كما يفعل قسم الهيرو مع slide-from-*. */
       .fade-left {
         transform: translateX(60px);
       }
@@ -137,7 +142,7 @@
       window.tailwind = { config: { darkMode: 'class' } };
       window.tailwind = undefined;
     </script>
-    <link rel="stylesheet" href="assets/css/tailwind.css?v=2" />
+    <link rel="stylesheet" href="assets/css/tailwind.css?v=3" />
   </head>
   <body class="font-sans text-gray-800 bg-white selection:bg-brand-100 selection:text-brand-900">
     <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/70 border-b border-gray-100">
@@ -211,7 +216,7 @@
         </div>
       </section>
 
-      <section id="about" class="py-16 sm:py-24">
+      <section id="about" class="py-16 sm:py-24 overflow-x-clip">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid lg:grid-cols-2 gap-10 items-center">
             <div class="order-2 lg:order-1 scroll-animate fade-right">
@@ -328,7 +333,7 @@
         </div>
       </section>
 
-      <section id="contact" class="py-16 sm:py-24">
+      <section id="contact" class="py-16 sm:py-24 overflow-x-clip">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid lg:grid-cols-2 gap-10">
             <div class="scroll-animate fade-right">
