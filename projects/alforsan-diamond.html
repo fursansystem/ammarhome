@@ -133,22 +133,22 @@
           <div class="swiper main-slider rounded-xl overflow-hidden mb-4">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                <div class="w-full aspect-video overflow-hidden">
                   <img src="../assets/img/7.jpg" alt="صورة 7 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                <div class="w-full aspect-video overflow-hidden">
                   <img src="../assets/img/8.jpg" alt="صورة 8 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                <div class="w-full aspect-video overflow-hidden">
                   <img src="../assets/img/9.jpg" alt="صورة 9 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+                <div class="w-full aspect-video overflow-hidden">
                   <img src="../assets/img/10.jpg" alt="صورة 10 لمشروع الفرسان دايموند" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
@@ -162,16 +162,24 @@
           <div class="swiper thumbnail-slider mt-2">
             <div class="swiper-wrapper">
               <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-                <img src="../assets/img/7.jpg" alt="معاينة صورة 7" class="w-full h-20 object-cover rounded" />
+                <div class="aspect-video overflow-hidden rounded">
+                  <img src="../assets/img/7.jpg" alt="معاينة صورة 7" class="w-full h-full object-cover" />
+                </div>
               </div>
               <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-                <img loading="lazy" src="../assets/img/8.jpg" alt="معاينة صورة 8" class="w-full h-20 object-cover rounded" />
+                <div class="aspect-video overflow-hidden rounded">
+                  <img loading="lazy" src="../assets/img/8.jpg" alt="معاينة صورة 8" class="w-full h-full object-cover" />
+                </div>
               </div>
               <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-                <img loading="lazy" src="../assets/img/9.jpg" alt="معاينة صورة 9" class="w-full h-20 object-cover rounded" />
+                <div class="aspect-video overflow-hidden rounded">
+                  <img loading="lazy" src="../assets/img/9.jpg" alt="معاينة صورة 9" class="w-full h-full object-cover" />
+                </div>
               </div>
               <div class="swiper-slide cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
-                <img loading="lazy" src="../assets/img/10.jpg" alt="معاينة صورة 10" class="w-full h-20 object-cover rounded" />
+                <div class="aspect-video overflow-hidden rounded">
+                  <img loading="lazy" src="../assets/img/10.jpg" alt="معاينة صورة 10" class="w-full h-full object-cover" />
+                </div>
               </div>
             </div>
           </div>
@@ -359,10 +367,18 @@
       document.addEventListener('DOMContentLoaded', function() {
         // سلايدر المصغّرات — يُنشأ قبل الرئيسي ليُمرّر إليه كـ thumbs
         const thumbSwiper = new Swiper('.thumbnail-slider', {
-          spaceBetween: 8,
+          spaceBetween: 10,
           slidesPerView: 4,
           freeMode: true,
           watchSlidesProgress: true,
+          breakpoints: {
+            320: {
+              slidesPerView: 3,
+            },
+            640: {
+              slidesPerView: 4,
+            },
+          },
         });
 
         // Main Slider
@@ -393,49 +409,7 @@
           },
         });
         
-        // Adjust slider container height on mobile
-        function adjustSliderHeight() {
-          if (window.innerWidth < 768) { // Mobile view
-            const slides = document.querySelectorAll('.main-slider .swiper-slide');
-            slides.forEach(slide => {
-              const img = slide.querySelector('img');
-              if (img) {
-                const aspectRatio = img.naturalHeight / img.naturalWidth;
-                const newHeight = window.innerWidth * aspectRatio;
-                slide.style.height = `${newHeight}px`;
-              }
-            });
-          } else {
-            // Reset height for desktop
-            const slides = document.querySelectorAll('.main-slider .swiper-slide');
-            slides.forEach(slide => {
-              slide.style.height = '';
-            });
-          }
-        }
         
-        // Run on load and resize
-        window.addEventListener('load', adjustSliderHeight);
-        window.addEventListener('resize', adjustSliderHeight);
-        
-        // Add CSS for full-width images on mobile
-        const style = document.createElement('style');
-        style.textContent = `
-          @media (max-width: 767px) {
-            .main-slider .swiper-slide {
-              width: 100% !important;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-            .main-slider .swiper-slide img {
-              width: 100%;
-              height: auto;
-              object-fit: contain;
-            }
-          }
-        `;
-        document.head.appendChild(style);
         
         // Thumbnail Slider for Additional Images
         const additionalThumbSwiper = new Swiper('.additional-thumbnail-slider', {
