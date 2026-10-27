@@ -21,9 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/tailwind.css?v=3" />
     <style>
-      .prose {
-        max-width: 100%;
-      }
+      /* لا تضع max-width هنا: هذا الـ <style> يأتي بعد ملف الـ CSS
+         وبنفس قوة المحدّد، فيتغلّب على max-w-4xl ويوسّع الصفحة */
       .prose :where(p):not(:where([class~="not-prose"] *)) {
         margin-top: 1.25em;
         margin-bottom: 1.25em;

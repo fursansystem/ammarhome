@@ -22,9 +22,8 @@
     <link rel="stylesheet" href="../assets/css/tailwind.css?v=3" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <style>
-      .prose {
-        max-width: 100%;
-      }
+      /* لا تضع max-width هنا: هذا الـ <style> يأتي بعد ملف الـ CSS
+         وبنفس قوة المحدّد، فيتغلّب على max-w-4xl ويوسّع الصفحة */
       .prose :where(p):not(:where([class~="not-prose"] *)) {
         margin-top: 1.25em;
         margin-bottom: 1.25em;
