@@ -380,10 +380,9 @@
         // سلايدر المصغّرات — يُنشأ قبل الرئيسي ليُمرّر إليه كـ thumbs
         const thumbSwiper = new Swiper('.thumbnail-slider', {
           spaceBetween: 10,
-          slidesPerView: 4,
+          slidesPerView: 5,
           freeMode: true,
           watchSlidesProgress: true,
-          centerInsufficientSlides: true,
           breakpoints: {
             320: {
               slidesPerView: 3,
@@ -392,7 +391,7 @@
               slidesPerView: 4,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 5,
             },
           },
         });
@@ -423,19 +422,19 @@
         // Thumbnail Slider for Additional Images
         const additionalThumbSwiper = new Swiper('.additional-thumbnail-slider', {
           spaceBetween: 10,
-          slidesPerView: 4,
+          slidesPerView: 5,
           freeMode: true,
           watchSlidesProgress: true,
           centerInsufficientSlides: true,
           breakpoints: {
             320: {
-              slidesPerView: 2,
-            },
-            640: {
               slidesPerView: 3,
             },
-            1024: {
+            640: {
               slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 5,
             },
           },
         });
