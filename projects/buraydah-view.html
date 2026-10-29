@@ -18,7 +18,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../assets/css/tailwind.css?v=3" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <style>
       .prose {
         max-width: 100%;
@@ -26,6 +28,51 @@
       .prose :where(p):not(:where([class~="not-prose"] *)) {
         margin-top: 1.25em;
         margin-bottom: 1.25em;
+      }
+
+      /* Swiper Custom Styles */
+      .swiper {
+        width: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        font-size: 1.5rem;
+      }
+
+      .swiper-pagination-bullet {
+        background: #fff;
+        opacity: 0.5;
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+
+      /* المصغّرة المطابقة للصورة المعروضة حالياً */
+      .thumbnail-slider .swiper-slide {
+        opacity: 0.55;
+        transition: opacity 0.3s;
+      }
+
+      .thumbnail-slider .swiper-slide-thumb-active {
+        opacity: 1;
       }
     </style>
   </head>
@@ -72,8 +119,37 @@
         <div class="max-w-4xl mx-auto text-right" dir="rtl">
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6 text-center">مشروع بريدة فيو</h1>
 
-          <div class="rounded-xl overflow-hidden mb-8">
-            <img src="../assets/img/buraydah-view-1.jpg" alt="واجهة الوحدات السكنية في مشروع بريدة فيو" class="w-full h-[420px] object-cover" />
+          <div class="swiper main-slider mb-2 rounded-xl overflow-hidden">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="w-full aspect-video overflow-hidden">
+                  <img src="../assets/img/buraydah-view-1.jpg" alt="واجهة مشروع بريدة فيو — إظهار نهاري" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="w-full aspect-video overflow-hidden">
+                  <img loading="lazy" src="../assets/img/buraydah-view-2.jpg" alt="واجهة مشروع بريدة فيو — إظهار مسائي" class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="swiper thumbnail-slider mt-2 mb-8">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide cursor-pointer">
+                <div class="aspect-video overflow-hidden rounded">
+                  <img loading="lazy" src="../assets/img/buraydah-view-1.jpg" alt="معاينة إظهار نهاري" class="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div class="swiper-slide cursor-pointer">
+                <div class="aspect-video overflow-hidden rounded">
+                  <img loading="lazy" src="../assets/img/buraydah-view-2.jpg" alt="معاينة إظهار مسائي" class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="bg-gray-50 p-6 rounded-xl mb-8">
@@ -131,16 +207,6 @@
           <h2 class="text-2xl font-bold mt-10 mb-4">واجهات الأدوار</h2>
           <p class="text-gray-700 leading-relaxed">واجهات معمارية بطابع عصري هادئ، بتدرجات رملية فاتحة وكتل بارزة وغائرة، مع نوافذ رأسية ممتدة وإضاءة خارجية مدمجة، وأسوار خارجية مع أحواض زراعية وموقف خاص لكل وحدة.</p>
 
-          <div class="grid sm:grid-cols-2 gap-6 mt-6">
-            <figure>
-              <img src="../assets/img/buraydah-view-1.jpg" alt="واجهة الأدوار — إظهار نهاري" class="w-full h-auto rounded-xl border border-gray-200" loading="lazy" />
-              <figcaption class="mt-2 text-sm text-gray-500 text-center">إظهار نهاري</figcaption>
-            </figure>
-            <figure>
-              <img src="../assets/img/buraydah-view-2.jpg" alt="واجهة الأدوار — إظهار مسائي" class="w-full h-auto rounded-xl border border-gray-200" loading="lazy" />
-              <figcaption class="mt-2 text-sm text-gray-500 text-center">إظهار مسائي</figcaption>
-            </figure>
-          </div>
 
           <h2 class="text-2xl font-bold mt-10 mb-4">نطاق الأعمال</h2>
           <ul class="list-disc pr-6 space-y-2 text-gray-700">
@@ -173,6 +239,47 @@
       });
 
       document.getElementById('y').textContent = new Date().getFullYear();
+
+      // المعرض: نفس نمط صفحتي الفرسان جولد ودايموند.
+      // سلايدر المصغّرات يُنشأ أولاً لتُمرّر نسخته إلى السلايدر الرئيسي،
+      // ووحدة thumbs هي ما يبقي الاثنين متطابقين مع loop.
+      document.addEventListener('DOMContentLoaded', function () {
+        const thumbnailSwiper = new Swiper('.thumbnail-slider', {
+          spaceBetween: 10,
+          slidesPerView: 5,
+          freeMode: true,
+          watchSlidesProgress: true,
+          breakpoints: {
+            320: {
+              slidesPerView: 3,
+            },
+            640: {
+              slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 5,
+            },
+          },
+        });
+
+        new Swiper('.main-slider', {
+          spaceBetween: 10,
+          navigation: {
+            nextEl: '.main-slider .swiper-button-next',
+            prevEl: '.main-slider .swiper-button-prev',
+          },
+          pagination: {
+            el: '.main-slider .swiper-pagination',
+            clickable: true,
+          },
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          thumbs: { swiper: thumbnailSwiper },
+        });
+      });
     </script>
   </body>
 </html>

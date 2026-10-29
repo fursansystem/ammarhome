@@ -378,6 +378,9 @@
             640: {
               slidesPerView: 4,
             },
+            1024: {
+              slidesPerView: 5,
+            },
           },
         });
 
@@ -392,17 +395,10 @@
             el: '.main-slider .swiper-pagination',
             clickable: true,
           },
-          breakpoints: {
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 0
-            },
-            // when window width is >= 640px
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 10
-            }
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
           },
           thumbs: {
             swiper: thumbSwiper,
